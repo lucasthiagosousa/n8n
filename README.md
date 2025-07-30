@@ -78,23 +78,32 @@ docker-compose --version
 ```sh
 vim docker-compose.yml
 ```
-Conectar ao Github
+# Conectar ao Github
 Gerar sua chave
-
+```bash
 ssh-keygen -t rsa -b 4096 -C "seu_email do git"
+```
 Inicie o ssh-agent no fundo
-
+```bash
 eval "$(ssh-agent -s)"
+```
 Adicione sua chave SSH privada ao ssh-agent
-
+```bash
 ssh-add ~/.ssh/id_rsa
+```
 Copie o conteúdo da sua chave pública para a área de transferência
-
+```bash
 cat ~/.ssh/id_rsa.pub
-Vá para a página de configurações de SSH do GitHub: GitHub SSH settings https://github.com/settings/keys Clique em "New SSH key", cole a chave pública no campo "Key" e adicione um título descritivo.
+```
 
-Para Testar
+Vá para a página de configurações de SSH do GitHub: GitHub SSH settings https://github.com/settings/keys
+Clique em "New SSH key", cole a chave pública no campo "Key" e adicione um título descritivo.
+
+# Para Testar
+
 No terminal, execute
-
+```bash
 ssh -T git@github.com
+```
+Você deverá ver uma mensagem de boas-vindas confirmando que a autenticação foi bem-sucedida.
  
